@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Ötödik feladat</title>
+</head>
+<body>
+
+    <h1>Ötödik feladat</h1>
+    
+    <h3 style="text-decoration:underline;">Gondoltam egy számra!</h3>
+    
+    <h4>Az Ön tippje:</h4>
+    <div id="ide1"></div>
+    
+    <h4>A gép tippje:</h4>
+    <div id="ide2"></div>
+    
+    <h4>Összehasonlítás eredménye:</h4>
+    <div id="ide3"></div>
+
+    <script>
+        var szam1 = window.prompt("Kérem az Ön tippjét! Csak szám lehet!", "5");
+        document.getElementById("ide1").innerHTML = szam1;
+        
+        var szam2 = Math.round(Math.random() * 100);
+        document.getElementById("ide2").innerHTML = szam2;
+        
+        if (szam1 > szam2) {
+            document.getElementById("ide3").innerHTML = "Az Ön tippje nagyobb! ";
+        }
+        else if (szam1 < szam2) {
+            document.getElementById("ide3").innerHTML = "A gép tippje nagyobb! ";
+        }
+        else {
+            document.getElementById("ide3").innerHTML = " A két szám egyforma!";
+        }
+    </script>
+
+</body>
+</html>

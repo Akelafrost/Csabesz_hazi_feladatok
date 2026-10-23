@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Első feladat</title>
+</head>
+<body>
+
+    <h1>Első feladat</h1>
+    <h3 style="text-decoration:underline;">Két szám összege és átlaga</h3>
+    
+    <form name="urlap">
+        <p>
+            <label>Kérem gépelje be az első számot!
+                <input type="text" name="szam1" size="5">
+            </label>
+        </p>
+        <p>
+            <label>Kérem gépelje be a második számot!
+                <input type="text" name="szam2" size="5">
+            </label>
+        </p>
+        <p>
+            <input type="text" name="osszegnek" readonly size="10">
+            <input type="button" value="Összeg" onclick="urlap.osszegnek.value=osszegzes(urlap.szam1.value,urlap.szam2.value);">
+        </p>
+        <p>
+            <input type="text" name="atlagnak" readonly size="10">
+            <input type="button" value="Átlag" onclick="urlap.atlagnak.value=atlag(urlap.szam1.value,urlap.szam2.value);">
+        </p>
+    </form>
+
+    <script language="JavaScript">
+        function osszegzes(a,b)
+        {
+            var osszeg=parseInt(a)+parseInt(b);
+            return osszeg;
+        };
+        
+        function atlag(a,b)
+        {
+            var osszeg=parseInt(a)+parseInt(b);
+            return osszeg/2;
+        };
+    </script>
+
+</body>
+</html>

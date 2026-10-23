@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Tömb első feladat - Napi forgalom</title>
+</head>
+<body>
+
+    <h2>Tömb első feladat - Napi forgalom</h2>
+
+
+    <button onclick="kiir()">Termékek</button>
+    <button onclick="osszegzes()">Összeg</button>
+    <button onclick="atlaga()">Átlag</button>
+
+    <h4>A termékek:</h4>
+
+    <div id="aruk"></div>
+
+    <br>
+
+    <div id="ide1"></div>
+
+    <br>
+
+    <div id="ide2"></div>
+
+    <script language="JavaScript">
+
+        var kiir_szoveg; 
+        var aru = ["szendvics", "bukta", "kávé", "üdítő"];
+        var penz = new Array(4);
+
+
+        function beker()
+        {
+            for(var i=0; i<=3; i++)
+            {
+                penz[i] = window.prompt("Írja be a(z) " + aru[i] + " napi bevételét!", "100");
+            }
+        };
+        
+
+        beker();
+
+
+        function kiir()
+        {
+            kiir_szoveg = "";
+            for (var i = 0; i < 4; i++)
+            {
+                kiir_szoveg += (i+1) + ". " + aru[i] + ": " + penz[i] + "Ft <br/>";
+            }
+            document.getElementById("aruk").innerHTML = kiir_szoveg;
+        };
+
+
+        function osszegzes()
+        {
+            var osszeg = 0;
+            for(var i=0; i<=3; i++)
+            {
+                osszeg = osszeg + parseInt(penz[i]);
+            }
+            document.getElementById("ide1").innerHTML = "A mai napi bevételek összege: " + osszeg + " Ft";
+        };
+
+
+        function atlaga()
+        {
+            var osszeg = 0;
+            for(var i=0; i<=3; i++)
+            {
+                osszeg = osszeg + parseInt(penz[i]);
+            }
+            var atlag = osszeg / 4;
+            document.getElementById("ide2").innerHTML = "A mai napi bevételek átlaga: " + atlag + " Ft";
+        };
+    </script>
+
+</body>
+</html>

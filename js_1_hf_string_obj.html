@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>String objektum tagfüggvényei</title>
+</head>
+<body>
+
+    <h2>Objektum 11. feladat - String objektum tagfüggvényei</h2>
+
+    <button onclick="tulajdonsag()">A szöveg tulajdonságai</button>
+    <br><br>
+
+    <div id="szovtul"></div>
+
+    <script language="JavaScript">
+        function tulajdonsag()
+        {
+            var szoveg = window.prompt("Kérem, gépelje be a szöveget!", "InteRnet TechnoLógiák");
+            
+            if (szoveg === null) return;
+
+            document.getElementById("szovtul").innerHTML = "A szöveg: " + szoveg 
+            + "<br/>A szöveg hossza: " + szoveg.length 
+            + "<br/>Csupa nagybetűvel: " + szoveg.toUpperCase() 
+            + "<br/>Csupa kisbetűvel: " + szoveg.toLowerCase() 
+            + "<br/>Az első karaktere: " + szoveg.charAt(0) 
+            + "<br/>A második karaktere: " + szoveg.charAt(1);
+        };
+    </script>
+
+</body>
+</html>

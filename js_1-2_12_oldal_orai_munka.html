@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<h1 id="elso">Betűstílus és méret váltás</h1> 
+<h3 id="harmad">Kattints a képre!</h3>
+<script>
+function betustilus() {
+
+var x = document.getElementById("elso"); x.style.fontStyle = "italic";
+x.style.color = "red";
+x.style.fontFamily= "courier new";
+}
+function betutipus() {
+var y = document.getElementById("harmad").style.font = "bold 1.5em verdana, serif";
+}
+</script>
+<button type="button" onclick="betustilus()">Betűstílus váltás </button>
+<button type="button" onclick="betutipus()">Betűtípus váltás</button>

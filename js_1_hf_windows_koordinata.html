@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Objektum 2. feladat - Window objektum</title>
+</head>
+<body>
+
+    <h2>Objektum 2. feladat - Window objektum</h2>
+    <p>Kattints valahova a böngésző ablakán belül!</p>
+
+    <div id="ide"></div>
+
+    <script>
+        window.captureEvents(Event.CLICK);
+        window.onclick= megjelenit;
+        
+        function megjelenit(koordinata)
+        {
+            document.getElementById("ide").innerHTML = "X koordináta: " + koordinata.pageX + "<br/> Y koordináta: " + koordinata.pageY;
+        };
+    </script>
+
+</body>
+</html>

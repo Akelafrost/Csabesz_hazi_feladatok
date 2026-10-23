@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Nettó érték átszámítása Euróba - 1. rész</title>
+</head>
+<body>
+
+    <fieldset style="width: 300px;">
+        <legend><b>Nettó érték átszámítása Euróba</b></legend>
+        <p>5000Ft bruttó érték nettója EUR-ban:</p>
+        <h3 id="eredmeny1"></h3>
+    </fieldset>
+
+    <script>
+        function szamolNettoEur(euroArfolyam) {
+            var bruttoHUF = 5000;
+            var nettoHUF = bruttoHUF / 1.27;
+            var nettoEUR = nettoHUF / euroArfolyam;
+            
+            document.getElementById("eredmeny1").innerHTML = nettoEUR.toFixed(4);
+            
+
+        }
+
+
+        szamolNettoEur(309);
+    </script>
+
+</body>
+</html>

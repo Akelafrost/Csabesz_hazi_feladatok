@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox feladat - Többes kiválasztás</title>
+</head>
+<body>
+    <h2>Objektum 5. feladat - Checkboxra példa</h2>
+    <form name="urlap">
+        <input type="checkbox" name="alma" value="250" onClick="szamol(this,ossz)">
+        1 kg alma Értéke 250 Ft
+        <br/>
+        <input type="checkbox" name="korte" value="350" onClick="szamol(this,ossz)">
+        1 kg körte Értéke 350 Ft
+        <br/>
+        <input type="checkbox" name="szilva" value="650" onClick="szamol(this,ossz)">
+        1 kg szilva Értéke 650 Ft
+        <br/>
+        <input type="checkbox" name="barack" value="850" onClick="szamol(this,ossz)">
+        1 kg barack Értéke 850 Ft
+        
+        <h4>A választott áru értéke:</h4>
+        <input type="text" name="ossz" value="0" readonly>
+    </form>
+
+    <script>
+        function szamol(aru, ossz)
+        {
+            if(aru.checked)
+                ossz.value=parseInt(ossz.value)+parseInt(aru.value);
+            else
+                ossz.value=parseInt(ossz.value)-parseInt(aru.value);
+        }
+    </script>
+
+</body>
+</html>

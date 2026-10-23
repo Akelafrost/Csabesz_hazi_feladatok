@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Tömb feladatok - rendezés sort()-tal</title>
+</head>
+<body>
+<h2>Tömb feladatok - rendezés sort()-tal</h2>
+    <input type="button" value="A bekért nevek kiíratása" onClick="kiirat()">
+
+    <h4>A nevek rendezés előtt:</h4>
+    <div id="elott"></div>
+
+    <h4>A nevek rendezés után:</h4>
+
+    <div id="utan"></div>
+
+    <script language="JavaScript">
+
+        var kiir;
+        var nevek = new Array(4);
+
+        function beker()
+        {
+            for(var i=0; i<4; i++)
+            {
+                nevek[i] = window.prompt("Adja meg a(z) " + (i+1) + ". nevet!");
+            }
+        }
+
+        function kiirat()
+        {
+            beker();
+
+
+            kiir = "";
+            for (var i = 0; i < 4; i++)
+            {
+                kiir += (i+1) + ". " + nevek[i] + " ";
+            }
+            document.getElementById("elott").innerHTML = kiir;
+
+            nevek.sort();
+
+            kiir = "";
+            for (var i = 0; i < 4; i++)
+            {
+                kiir += (i+1) + ". " + nevek[i] + " ";
+            }
+            document.getElementById("utan").innerHTML = kiir;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Negyedik feladat</title>
+</head>
+<body>
+
+    <h1>Negyedik feladat</h1>
+    <h4>A bekért számok:</h4>
+    
+    <form name="urlap">
+        <p>
+            Kérem adja meg az x értékét tizedes számként!
+            <input type="text" name="xold" size="5" value="5.5">
+        </p>
+        <p>
+            Kérem adja meg az y értékét tizedes számként!
+            <input type="text" name="yold" size="5" value="10.8">
+        </p>
+        <p>
+            <input type="button" value="Eredmény" onclick="osszead(xold.value,yold.value)">
+        </p>
+    </form>
+
+    <div id="szamok"></div>
+
+    <h4>Az eredmény:</h4>
+    <div id="ossz"></div>
+
+    <script language="JavaScript">
+        function osszead(x,y)
+        {
+        var eredmeny = parseFloat(x) + parseFloat(y);
+        document.getElementById("szamok").innerHTML = x+" és "+y;
+        document.getElementById("ossz").innerHTML = x + " + " + y + " = " +eredmeny;
+        };
+    </script>
+
+</body>
+</html>

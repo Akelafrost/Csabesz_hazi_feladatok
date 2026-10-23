@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Kétdimenziós tömb feladat</title>
+</head>
+<body>
+<h2>Kétdimenziós tömb feladat</h2>
+    <script language="JavaScript">
+        var tomb = new Array(5);
+        for (var i = 0; i <= 4; i++) 
+        {
+            tomb[i] = new Array(2);
+            tomb[i][0] = window.prompt("Írja be a(z) " + (i + 1) + ". nevet!", "Kis Edina");
+            tomb[i][1] = window.prompt("Írja be a(z) " + (i + 1) + ". életkort!", "20");
+        };
+        function tabla(sor, oszlop, ertek) 
+        {
+            document.write("<table cellspacing=0 cellpadding=10 border=1><tr><th>Név</th><th>Életkor</th></tr>");
+            for (var i = 0; i < sor; i++) 
+            {
+                document.write("<tr>");
+                for (var j = 0; j < oszlop; j++) 
+                {
+                    document.write("<td>" + ertek[i][j] + "</td>");
+                };
+                document.write("</tr>");
+            };
+            document.write("</table>");
+        };
+
+        tabla(5, 2, tomb);
+
+        function osszegzes() 
+        {
+            var osszeg = 0;
+            for (var i = 0; i <= 4; i++) 
+            {
+                osszeg = osszeg + parseInt(tomb[i][1]);
+            }
+            document.getElementById("korok").innerHTML = "Az életkorok összege: " + osszeg + "év";
+        };
+    </script>
+
+    <br/>
+    <button onclick="osszegzes()">Korok összeg</button>
+    <h4 id="korok"></h4>
+
+</body>
+</html>

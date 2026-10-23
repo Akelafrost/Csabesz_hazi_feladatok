@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>100-110 közötti egész számok</title>
+</head>
+<body>
+
+    <button onclick="szamol()">Számok kiírása</button>
+    
+    <div id="ide7"></div>
+
+    <script>
+        function szamol() {
+            var szam = "";
+            var i = 0;
+            do {
+                szam += "<br>" + Number(i+1) + ". szám: " + Number(i+100);
+                i++;
+            }
+            while (i <= 10)
+            document.getElementById("ide7").innerHTML = szam;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Űrlapelem stílusának változtatása</title>
+</head>
+
+<body onkeyup="nagybetus()">
+
+    <h2>Objektum 10. feladat - Űrlap tartalom formázás</h2>
+
+    <form name="formazott">
+        <p>
+            <label>Kérem, gépelje be a szöveget! 
+                <input type="text" name="eredeti" size="30" value="Internet technológiák">
+            </label>
+        </p>
+        
+        <p>
+            <label>A bekért szöveg csupa nagybetűvel: 
+                <input type="text" name="modositott" size="30" readonly>
+            </label>
+        </p>
+    </form>
+
+    <script>
+        function nagybetus()
+        {
+            const form = document.forms.formazott;
+            form.modositott.value = form.eredeti.value.toUpperCase();
+        }
+
+        nagybetus();
+    </script>
+
+</body>
+</html>

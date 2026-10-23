@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Szöveg megfordítása</title>
+</head>
+<body>
+
+    <h2>Objektum 12. feladat - Szöveg megfordítása</h2>
+    
+    <p>Írja be a nevét a szövegdobozba, majd kattintson a Fordít gombra.</p>
+
+    <form name="urlap_f">
+        <input type="text" name="str" value="Mézga Géza">
+        <br/><br/>
+        <input type="button" value="Fordít" onclick="fordit()">
+    </form>
+
+    <p><b id="ideford"> </b></p>
+
+    <script language="JavaScript">
+        function fordit(szovford)
+        {
+            var z = document.getElementById('ideford');
+            var szovford = document.urlap_f.str.value;
+            hossz = szovford.length;
+
+            if(z.innerHTML==" ")
+            {
+                for(i=hossz-1;i>=0;i--)
+                    z.innerHTML+=szovford[i];
+            }
+            else
+            {
+                z.innerHTML=" ";
+                for(i=hossz-1;i>=0;i--)
+                    z.innerHTML+=szovford[i];
+            };
+        }
+    </script>
+
+</body>
+</html>

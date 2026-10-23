@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>1. Feladat: Páros számok, négyzet, gyök</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: right;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Pozitív páros számok 100-ig</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Szám</th>
+                <th>Négyzete</th>
+                <th>Négyzetgyöke</th>
+            </tr>
+        </thead>
+        <tbody id="parosTablazat">
+        </tbody>
+    </table>
+
+    <script>
+        var tbody = document.getElementById("parosTablazat");
+
+        for (var i = 1; i <= 100; i++) {
+            
+            if (i % 2 == 0) {
+                var negyzet = i * i;
+                var gyok = Math.sqrt(i);
+                var sor = document.createElement("tr");
+                
+                sor.innerHTML = "<td>" + i + "</td>" +
+                                "<td>" + negyzet + "</td>" +
+                                "<td>" + gyok.toFixed(4) + "</td>";
+                
+                tbody.appendChild(sor);
+            }
+        }
+    </script>
+
+</body>
+</html>

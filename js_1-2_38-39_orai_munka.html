@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<p>Adja meg a számot:</p>
+<input type="number" id="szam" value="10" />
+<button onclick="pozitiv()">Pozitív?</button>
+<h3 id="ide" style="border-bottom: dashed red 1px; width:150px;">Ide kerül a válasz</h3>
+<script>
+function pozitiv() {
+var szamom,poz;
+szamom = document.getElementById("szam").value;
+poz = (szamom > 0) ? "pozitív": "nem pozitív"; 
+document.getElementById("ide").innerHTML = "A bekért szám: "+
+szamom+" ,ami "+poz;
+}
+</script>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+
+    <meta charset="UTF-8">
+    <title>2.E - Feil András</title>
+    <style>
+        body {
+            background-color: #e0f0ff; /* világoskék háttér */
+            color: blue;               /* kék betűszín */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14pt;
+        }
+        h3 {
+            margin-bottom: 5px;
+        }
+        p {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .feladat-blokk {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>E. csoport (60 pont)</h2>
+
+    <!-- 1. FELADAT: GÖMB FELSZÍNE -->
+    <div class="feladat-blokk">
+        <h3>1. Feladat - Gömb felszíne:</h3>
+        <p>Írja be a szövegdobozba a gömb sugarát, majd kattintson a Felszín gombra.</p>
+        <input type="text" id="sugar" size="5" value="3">
+        <button onclick="gombFelszin()">Felszín</button>
+        <p><b>Eredmény:</b> <input type="text" id="felszinEredmeny" size="10" readonly></p>
+    </div>
+
+    <!-- 2. FELADAT: SZÖVEG MEGFORDÍTVA -->
+    <div class="feladat-blokk">
+        <h3>2. Feladat - Szöveg fordítva:</h3>
+        <p>Írja be a nevét a szövegdobozba, majd kattintson a Fordít gombra.</p>
+        <input type="text" id="nevBevitel" value="Kis Vilma">
+        <br/><br/>
+        <button onclick="szovegFordit()">Fordít</button>
+  
+        <p id="forditottEredmeny" style="color: green; font-weight: bold; min-height: 1.5em; margin-top: 15px;"></p>
+    </div>
+
+    <!-- 3. FELADAT: GENERÁLÁS -->
+    <div class="feladat-blokk">
+        <h3>3. Feladat - Generál:</h3>
+        <p>Kattintson a "Generál" gombra, és lesz 15 egész szám! Keresse meg az öttel osztható számokat a generált számok közül!</p>
+        <button onclick="generalEsVizsgal()">Generál és vizsgál</button>
+
+        <p id="generaltSzamok" style="color: brown; margin-top: 15px;"></p>
+
+        <p id="oszthatoSzamok" style="color: red; font-weight: bold;"></p>
+    </div>
+
+    <script>
+        // 1. FELADAT METÓDUS
+        function gombFelszin() {
+            var r = parseFloat(document.getElementById("sugar").value);
+            if (isNaN(r) || r < 0) {
+                alert("Kérjük, érvényes pozitív számot adjon meg sugárnak!");
+                return;
+            }
+
+            var A = 4 * Math.PI * Math.pow(r, 2);
+
+            document.getElementById("felszinEredmeny").value = A.toFixed(1);
+        }
+
+        // 2. FELADAT METÓDUS
+        function szovegFordit() {
+            var eredetiSzoveg = document.getElementById("nevBevitel").value;
+            var forditottSzoveg = "";
+
+            for (var i = eredetiSzoveg.length - 1; i >= 0; i--) {
+                forditottSzoveg += eredetiSzoveg[i];
+            }
+            
+            document.getElementById("forditottEredmeny").innerHTML = forditottSzoveg;
+        }
+
+        // 3. FELADAT METÓDUS
+        function generalEsVizsgal() {
+            var generalt = [];
+            var oszthato = [];
+            
+
+            for (var i = 0; i < 15; i++) {
+                var veletlenSzam = Math.floor(Math.random() * 100) + 1;
+                generalt.push(veletlenSzam);
+                
+                if (veletlenSzam % 5 === 0) {
+                    oszthato.push(veletlenSzam);
+                }
+            }
+
+            document.getElementById("generaltSzamok").innerHTML = "Generált számok: " + generalt.join(", ") + ",";
+            document.getElementById("oszthatoSzamok").innerHTML = "5-tel osztható számok: " + oszthato.join(", ");
+        }
+    </script>
+
+</body>
+</html>

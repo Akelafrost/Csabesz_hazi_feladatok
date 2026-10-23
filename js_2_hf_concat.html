@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Tömb harmadik feladat concat() függvény</title>
+</head>
+<body>
+
+    <h2>Tömb harmadik feladat concat() függvény</h2>
+    
+    <h4>Csütörtöki napom:</h4>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tárgyaim</th>
+                <th>Termek</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="t1"></td>
+                <td id="t2"></td>
+            </tr>
+            <tr>
+                <td id="t3"></td>
+                <td id="t4"></td>
+            </tr>
+            <tr>
+                <td id="t5"></td>
+                <td id="t6"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>Összefűzés eredménye:</h4>
+    <div id="eredmeny"></div>
+
+    <script language="JavaScript">
+
+        var tomb_1 = [" Matek", " F-310 "];
+        var tomb_2 = [" Int.tech", " I-117 ", "/4 órás!!!!/ "];
+        var tomb_3 = [" Adatb.", " P-012 "];
+
+        var tombok = tomb_1.concat(tomb_2, tomb_3);
+
+        document.getElementById("t1").innerHTML = tomb_1[0];
+        document.getElementById("t2").innerHTML = tomb_1[1];
+        
+        document.getElementById("t3").innerHTML = tomb_2[0];
+        document.getElementById("t4").innerHTML = tomb_2[1];
+        
+        document.getElementById("t5").innerHTML = tomb_3[0];
+        document.getElementById("t6").innerHTML = tomb_3[1];
+
+        document.getElementById("eredmeny").innerHTML = tombok.join(" , ");
+    </script>
+
+</body>
+</html>

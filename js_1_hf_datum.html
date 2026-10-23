@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Objektum 2. feladat - Dátum, idő</title>
+</head>
+<body>
+
+    <h2>Objektum 2. feladat - Dátum, idő</h2>
+
+    <script language="JavaScript">
+        var datum = new Date();
+        
+        document.write('A mai dátum: <b>' + datum.getFullYear() + '. ' + (datum.getMonth() + 1) + '. ' + datum.getDate() + '</b>');
+        
+        hetnapja = datum.getDay();
+        
+        var napok = new Array("VASÁRNAP", "HÉTFŐ", "KEDD", "SZERDA", "CSÜTÖRTÖK", "PÉNTEK", "SZOMBAT");
+
+        document.write("<p>Ma <font color=#9400D3><u>" + napok[hetnapja] + "</u></font> van</p>");
+
+        function ido()
+        {
+            return (datum.getHours() + " óra " + datum.getMinutes() + " perc.");
+        };
+        
+        document.write("<p>A pontos idő: <b>" + ido() + "</b></p>");
+    </script>
+
+</body>
+</html>

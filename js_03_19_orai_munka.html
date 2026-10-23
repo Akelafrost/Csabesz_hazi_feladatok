@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator objektum mezői</title>
+</head>
+<body>
+
+    <h3>A Navigator objektum mezőiről az információk:</h3>
+
+    <script>
+        var hanyadik = 1;
+        for (mezonev in navigator)
+        {
+            document.write("<br>A navigator objektum: " + hanyadik + " " + mezonev + " tulajdonsága: " + navigator[mezonev]);
+            hanyadik++
+        };
+    </script>
+
+</body>
+</html>

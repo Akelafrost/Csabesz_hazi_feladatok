@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Választókör feladat - Radio gomb</title>
+</head>
+<body>
+
+    <h2>Objektum 6. feladat - Választókörre (Radio) példa</h2>
+
+    <h5>Kérem válasszon az alábbi számok közül!</h5>
+    <br/><input type="radio" name="szam" value="2" onClick="szamol(this.value)"> 2
+    <br/> <input type="radio" name="szam" value="3" onClick="szamol(this.value)"> 3
+    <br/> <input type="radio" name="szam" value="4" onClick="szamol(this.value)"> 4
+    <br/> <input type="radio" name="szam" value="5" onClick="szamol(this.value)"> 5
+
+    <div id="eredmeny"></div>
+
+    <script>
+        function szamol(szam)
+        {
+            negyzet=Math.pow(szam,2);
+            gyok=Math.sqrt(szam);
+            kob=Math.pow(szam,3);
+            
+            document.getElementById("eredmeny").innerHTML = "<br/>A választott szám: "
+            +szam+";<br/>Négyzete: "+negyzet+"; <br/>Négyzetgyöke: "+Math.round(gyok*100)/100+";<br/>Köbe: "+kob+";";
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Hetedik feladat - Lottósorsolás</title>
+</head>
+<body>
+
+    <h2>Hetedik feladat</h2>
+    <h3>Lottó sorsolás</h3>
+
+    <!-- 2. Kép: Az űrlapterület -->
+    Az Ön tippjei:
+    <form>
+        <input type="text" id="szam1" size="1cm"/>
+        <input type="text" id="szam2" size="1cm"/>
+        <input type="text" id="szam3" size="1cm"/>
+        <input type="text" id="szam4" size="1cm"/>
+        <input type="text" id="szam5" size="1cm"/><br/><br/>
+        <input type="button" onclick="sorsol()" value="Sorsolás"/>
+    </form>
+    A sorsolás eredménye: <h4 id="szamok"></h4>
+    Az Ön találatainak száma:<h4 id="eredmeny"></h4>
+
+    <script language="JavaScript">
+        function sorsol() {
+
+            var tomb = [];
+            tomb[0] = document.getElementById("szam1").value;
+            tomb[1] = document.getElementById("szam2").value;
+            tomb[2] = document.getElementById("szam3").value;
+            tomb[3] = document.getElementById("szam4").value;
+            tomb[4] = document.getElementById("szam5").value;
+            var hiba = "";
+            var i = 0;
+            
+            while (i < 5 && hiba == "")
+            {
+
+                if (tomb[i] < 1 || tomb[i] > 90) hiba = alert("A(z) " + (i + 1) + ". szám tartományon kívül van!");
+                else
+                {
+                    var j = 0;
+
+                    while(j < i)
+                    {
+                        if(tomb[i] == tomb[j]) hiba = alert("A(z) " + (i + 1) + ".szám és a(z) " + (j + 1) + ".szám megegyeznek!");
+                        j++;
+                    };
+                };
+                i++;
+            };
+            
+            if (hiba != "") document.getElementById("eredmeny").innerHTML = hiba;
+
+            else
+            {
+                var sors = [];
+                var i = 0;
+                while(i < 5)
+                {
+
+                    sors[i] = Math.round(Math.random() * 89) + 1;
+                    var ok = true;
+                    var j = 0;
+                    while(j < i)
+                    {
+                        if(sors[i] == sors[j]) ok = false;
+                        j++;
+                    };
+                    if (ok) i++;
+                };
+
+                document.getElementById("szamok").innerHTML = "";
+                for(var i = 0; i < 5; i++)
+                    document.getElementById("szamok").innerHTML += sors[i] + " ";
+                
+
+                var talalt = 0;
+                for(var i = 0; i < 5; i++)
+                {
+                    var j = 0;
+                    while(j < 5 && tomb[i] != sors[j]) j++;
+                    if (tomb[i] == sors[j]) talalt++;
+                };
+                document.getElementById("eredmeny").innerHTML = talalt;
+            };
+        }
+    </script>
+
+</body>
+</html>

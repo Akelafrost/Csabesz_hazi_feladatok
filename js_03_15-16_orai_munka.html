@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Megoldás ciklussal</title>
+    <style>
+        .kontener {
+            display: flex;
+            gap: 40px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+        .oszlop {
+            min-width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kontener">
+        <div class="oszlop">
+            <h4>Számok (50-ig):</h4>
+
+            <div id="ide4"></div>
+        </div>
+        
+        <div class="oszlop">
+            <h4>Négyzetek:</h4>
+
+            <div id="ide5"></div>
+        </div>
+    </div>
+
+    <script>
+        for (var i = 5 ; i <= 50 ; i = i+5)
+        {
+            document.getElementById("ide4").innerHTML += i + '<br>';
+            document.getElementById("ide5").innerHTML += Math.pow(i,2) + '<br>';
+        }
+    </script>
+
+</body>
+</html>

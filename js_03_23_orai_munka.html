@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Feladat</title>
+</head>
+<body>
+
+    <h3>10 és 20 közötti egész számok négyzetei:</h3>
+    
+    <button onclick="negyzetek()">Számol</button>
+    
+    <div id="ide6"></div>
+
+    <script>
+        function negyzetek() {
+            var negyzet = "";
+            var i = 10;
+            while (i <= 20) {
+                negyzet += "<br>A szám és négyzete: " + i + " ;" + Math.pow(i,2);
+                i++;
+            }
+            document.getElementById("ide6").innerHTML = negyzet;
+        }
+    </script>
+
+</body>
+</html>

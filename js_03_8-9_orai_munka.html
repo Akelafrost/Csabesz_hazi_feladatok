@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div style="float:left; width:220px;">
+<h3>Paraméteres függvény 1.</h3>
+<p>Az 5 és a 10 összege:</p>
+<h3 id="ide1" style="border-bottom: dotted blue 2px; width:200px;">Az 5 és a 10 összege</h3>
+</div>
+<div style="float:left; width:220px;">
+<h3>Paraméteres függvény 2.</h3>
+<p>Az 5 és a 10 szorzata:</p>
+<h3 id="ide2" style="border-bottom: dotted blue 2px; width:200px;">Az 5 és a 10 szorzata</h3>
+</div>
+<script>
+function para_fv1(a, b) {
+return a + b;
+}
+document.getElementById("ide1").innerHTML = para_fv1(5, 10); 
+function para_fv2(a, b) 
+{
+c = a * b;
+document.getElementById("ide2").innerHTML = c;
+}
+para_fv2(5,10);
+
+</script>
+</body>
+-</html>

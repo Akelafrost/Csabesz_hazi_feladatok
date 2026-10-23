@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Select és Radio feladat</title>
+</head>
+<body>
+
+    <h2>Objektum 7. feladat - Űrlap (Select és Radio) példa</h2>
+
+    <h4>Kérem válasszon betűszínt!</h4>
+    <select onChange="document.fgColor=this.value">
+        <option value="black" selected>Fekete</option>
+        <option value="red">Piros</option>
+        <option value="green">Zöld</option>
+        <option value="yellow">Sárga</option>
+        <option value="blue">Kék</option>
+        <option value="white">Fehér</option>
+    </select>
+
+    <h4>Kérem válasszon háttérszínt!</h4>
+    <input type="radio" name="vg" value="white" checked onChange="document.bgColor=this.value"> Fehér
+    <input type="radio" name="vg" value="black" onChange="document.bgColor=this.value"> Fekete
+    <input type="radio" name="vg" value="red" onChange="document.bgColor=this.value"> Piros
+    <input type="radio" name="vg" value="green" onChange="document.bgColor=this.value"> Zöld
+    <input type="radio" name="vg" value="yellow" onChange="document.bgColor=this.value"> Sárga
+    <input type="radio" name="vg" value="blue" onChange="document.bgColor=this.value"> Kék
+
+</body>
+</html>

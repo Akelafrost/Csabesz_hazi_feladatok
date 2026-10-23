@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<p>Adja meg a számot, majd megvizsgáljuk:</p>
+<input id="szam1" value="0" />
+<button onclick="pozitiv1()">Pozitív?</button>
+<h3 id="ide1" style="border:dotted blue 2px; width:200px;">Ide kerül a válasz</h3>
+<script>
+function pozitiv1() {
+var szamoml, pozl;
+szamom1 = document.getElementById("szam1").value; if (isNaN(szamom1)) {
+poz1 = alert("Nem szám! Próbáld újra!");
+} 
+else {
+poz1 = (szamom1 > 0) ? "pozitív": "nem pozitív"; 
+document.getElementById("ide1").innerHTML = "A bekért szám: "+ szamom1+ " ami "+poz1;
+}
+}
+</script>

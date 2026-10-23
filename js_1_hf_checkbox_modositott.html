@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>checkbox feladat - Többes kiválasztás</title>
+</head>
+<body>
+
+    <h2>Objektum 5. feladat - Checkboxra példa</h2>
+    <form name="urlap">
+        <input type="checkbox" name="alma" id="almaCheck" value="" onclick="szamol(this,ossz)">
+        <span id="almaSzoveg">1 kg alma</span>
+        <br/>
+        
+        <input type="checkbox" name="korte" id="korteCheck" value="" onclick="szamol(this,ossz)">
+        <span id="korteSzoveg">1 kg körte</span>
+        <br/>
+        
+        <input type="checkbox" name="szilva" id="szilvaCheck" value="" onclick="szamol(this,ossz)">
+        <span id="szilvaSzoveg">1 kg szilva</span>
+        <br/>
+        
+        <input type="checkbox" name="barack" id="barackCheck" value="" onclick="szamol(this,ossz)">
+        <span id="barackSzoveg">1 kg barack</span>
+        
+        <h4>A választott áru értéke:</h4>
+        <input type="text" name="ossz" value="0" readonly>
+    </form>
+
+    <script>
+        var bekerAlmar = window.prompt("Kérem adja meg az alma árát:", "250");
+        var bekerKorter = window.prompt("Kérem adja meg a körte árát:", "350");
+        var bekerSzilvaar = window.prompt("Kérem adja meg a szilva árát:", "650");
+        var bekerBarackar = window.prompt("Kérem adja meg a barack árát:", "850");
+
+        document.getElementById("almaCheck").value = bekerAlmar;
+        document.getElementById("almaSzoveg").innerHTML = "1 kg alma Értéke " + bekerAlmar + " Ft";
+
+        document.getElementById("korteCheck").value = bekerKorter;
+        document.getElementById("korteSzoveg").innerHTML = "1 kg körte Értéke " + bekerKorter + " Ft";
+
+        document.getElementById("szilvaCheck").value = bekerSzilvaar;
+        document.getElementById("szilvaSzoveg").innerHTML = "1 kg szilva Értéke " + bekerSzilvaar + " Ft";
+
+        document.getElementById("barackCheck").value = bekerBarackar;
+        document.getElementById("barackSzoveg").innerHTML = "1 kg barack Értéke " + bekerBarackar + " Ft";
+
+        function szamol(aru, ossz)
+        {
+            if(aru.checked)
+                ossz.value=parseInt(ossz.value)+parseInt(aru.value);
+            else
+                ossz.value=parseInt(ossz.value)-parseInt(aru.value);
+        }
+    </script>
+
+</body>
+</html>

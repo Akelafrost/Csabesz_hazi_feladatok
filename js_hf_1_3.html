@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Harmadik feladat</title>
+</head>
+<body>
+
+    <h1>Harmadik feladat</h1>
+    <h3 style="text-decoration:underline;">Téglatest felszíne és térfogata</h3>
+    
+    <form name="urlap">
+        <p>
+            Kérem gépelje be az "a" élhossz értékét!
+            <input type="text" name="aold" size="5" value="2"> cm
+        </p>
+        <p>
+            Kérem gépelje be az "b" élhossz értékét!
+            <input type="text" name="bold" size="5" value="4"> cm
+        </p>
+        <p>
+            Kérem gépelje be az "c" élhossz értékét!
+            <input type="text" name="cold" size="5" value="5"> cm
+        </p>
+        <p>
+            <input type="button" value="Eredmény" onclick="szamolas();">
+        </p>
+    </form>
+
+    <h4>A bekért adatok:</h4>
+    <div id="abc"></div>
+
+    <h4>A felszín:</h4>
+    <div id="felszin"></div>
+
+    <h4>A térfogat:</h4>
+    <div id="terfogat"></div>
+
+    <script language="JavaScript">
+        function szamolas()
+        {
+            var a,b,c,A,V;
+            a=document.urlap.aold.value;
+            b=document.urlap.bold.value;
+            c=document.urlap.cold.value;
+            A=2*a*b+2*a*c+2*b*c;
+            V=a*b*c;
+            document.getElementById("abc").innerHTML = a+" cm, "+b+" cm, "+c+" cm";
+            document.getElementById("felszin").innerHTML = A+" cm<sup>2</sup>";
+            document.getElementById("terfogat").innerHTML = V+" cm<sup>3</sup>";
+        };
+    </script>
+
+</body>
+</html>

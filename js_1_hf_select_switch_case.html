@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Select, switch..case feladat</title>
+</head>
+<body>
+
+    <h2>Objektum 8. feladat - Űrlap Választókörre (Radio) példa</h2>
+
+    <form>
+        <p>
+            <label>Első szám: <input type="text" id="szam1" value="34"></label>
+        </p>
+        <p>
+            <label>Második szám: <input type="text" id="szam2" value="56"></label>
+        </p>
+
+        <h4>Műveletek:</h4>
+
+        <p><input type="radio" name="muvelet" id="plusz"> összeadás</p>
+        <p><input type="radio" name="muvelet" id="minusz" checked> kivonás</p>
+        <p><input type="radio" name="muvelet" id="szor"> szorzás</p>
+        <p><input type="radio" name="muvelet" id="oszt"> osztás</p>
+        <p><input type="radio" name="muvelet" id="hatv"> hatványozás</p>
+        <p><input type="radio" name="muvelet" id="gyokv"> első szám gyöke</p>
+
+        <p>
+            <input type="button" value="Számolj!" onclick="szamol()">
+        </p>
+    </form>
+
+    <h1 id="szamologep"></h1>
+
+    <script>
+        function szamol()
+        {
+            var x = document.getElementById("szam1").value;
+            var y = document.getElementById("szam2").value;
+            var muv = "";
+            
+            if (document.getElementById("plusz").checked) muv = "+";
+            if (document.getElementById("minusz").checked) muv = "-";
+            if (document.getElementById("szor").checked) muv = "*";
+            if (document.getElementById("oszt").checked) muv = "/";
+            if (document.getElementById("hatv").checked) muv = "^";
+            if (document.getElementById("gyokv").checked) muv = "@";
+            
+            var eredm = 0;
+            
+            switch(muv)
+            {
+                case "+":
+                    eredm = parseInt(x) + parseInt(y);
+                    break;
+                case "-":
+                    eredm = x - y;
+                    break;
+                case "*":
+                    eredm = x * y;
+                    break;
+                case "/":
+                    eredm = x / y;
+                    break;
+                case "^":
+                    eredm = Math.pow(x, y);
+                    break;
+                case "@":
+                    eredm = Math.sqrt(x);
+                    break;
+                default:
+                    eredm = "Kérem, válasszon műveletet!";
+            };
+            
+            document.getElementById("szamologep").innerHTML = eredm;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Második feladat</title>
+</head>
+<body>
+
+    <h1>Második feladat</h1>
+    <h3 style="text-decoration:underline;">Két szám összege és szorzata</h3>
+    
+    <form name="urlap2">
+        <p>
+            <label>Kérem írjon be két egész számot!
+                <input type="text" name="szam1" size="5" value="10">
+                <input type="text" name="szam2" size="5" value="20">
+            </label>
+        </p>
+        <p>
+            <input type="button" value="Számol" onclick="szamol(urlap2.szam1.value, urlap2.szam2.value);">
+        </p>
+    </form>
+
+    <script language="JavaScript">
+        function szamol(a,b)
+        {
+            var osszeg=parseInt(a)+parseInt(b);
+            var atlag=osszeg/2;
+            var szorzat=a*b;
+            alert("Összeg: "+osszeg+"\nÁtlag: "+atlag+"\nSzorzat: "+szorzat);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Űrlap objektum - Select feladat</title>
+</head>
+<body>
+
+    <form>
+        <h4>K E D V E N C E I M</h4>
+        
+        <select onChange="if(this.value !== 'default') { window.open(this.options[this.selectedIndex].value, '_blank'); }">
+            <option value="default">Válasszon!</option>
+            <option value="http://uniduna.hu">kedvenc iskola</option>
+            <option value="http://port.hu">kedvenc műsorújság</option>
+            <option value="http://google.com">kedvenc kereső</option>
+            <option value="http://gmail.com">kedvenc levelező</option>
+        </select>
+    </form>
+
+</body>
+</html>

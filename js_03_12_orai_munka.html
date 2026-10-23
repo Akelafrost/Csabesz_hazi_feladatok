@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Nettó érték átszámítása Euróba - 2. rész</title>
+</head>
+<body>
+
+    <fieldset style="width: 350px;">
+        <legend><b>Nettó érték átszámítása Euróba</b></legend>
+        
+        <p>EURO árfolyam:</p>
+        <input type="number" id="arfolyamInput" value="310"><br><br>
+        
+        <p>Bekért bruttó érték nettója EUR-ban:</p>
+        <input type="number" id="bruttoInput" value="1000">
+        <button onclick="atvalt()">Számol</button><br><br>
+        
+        <h3 id="eredmeny2">3.1451612903225805</h3>
+    </fieldset>
+
+    <script>
+        function atvalt() {
+
+            var euroArfolyam = parseFloat(document.getElementById("arfolyamInput").value);
+            var bruttoHUF = parseFloat(document.getElementById("bruttoInput").value);
+            
+        
+            if (isNaN(euroArfolyam) || isNaN(bruttoHUF) || euroArfolyam <= 0) {
+                document.getElementById("eredmeny2").innerHTML = "Hibás adat!";
+                return;
+            }
+            
+
+            var nettoHUF = bruttoHUF / 1.27;
+            var nettoEUR = nettoHUF / euroArfolyam;
+            
+           
+            document.getElementById("eredmeny2").innerHTML = nettoEUR;
+        }
+    </script>
+
+</body>
+</html>

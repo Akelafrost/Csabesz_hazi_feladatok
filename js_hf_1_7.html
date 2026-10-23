@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Hetedik feladat</title>
+</head>
+<body>
+
+    <h1>Hetedik feladat</h1>
+    
+    <h3>Szám - nem szám?</h3>
+    
+    <form name="urlap">
+        <p>
+            <label>Adjon meg egy karakterláncot<br>
+                <input type="text" name="bevitel" value="wee45">
+            </label>
+            <input type="button" value="Szám - nem szám" onclick="is_nan(this.form.bevitel.value)">
+        </p>
+    </form>
+
+    <script language="JavaScript">
+        function is_nan(karakterlanc)
+        {
+            if(isNaN(karakterlanc) == true)
+            { alert(karakterlanc + " nem szám!"); return false; }
+            else {alert(karakterlanc + " egy szám!");return true;}
+        };
+    </script>
+
+</body>
+</html>

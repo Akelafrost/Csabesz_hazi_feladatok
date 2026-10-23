@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Nyolcadik feladat</title>
+</head>
+<body>
+
+    <h1>8. feladat – isNaN() használata 2.</h1>
+
+    <form name="urlap">
+        <p>
+            <label>A vizsgált szám: 
+                <input type="text" name="mezo" size="10">
+            </label>
+        </p>
+        <p>
+            <input type="button" value="Beolvas" onclick="beker(urlap.mezo);">
+            <input type="button" value="Generál" onclick="urlap.mezo.value=veletlenszam(); vizsgalparos(urlap.mezo);">
+            <input type="button" value="Páros?" onclick="vizsgalparos(urlap.mezo);">
+        </p>
+    </form>
+
+    <script language="JavaScript">
+        function beker(sz)
+        {
+            var a=window.prompt('Kérek egy számot', '');
+            if (a!='')
+            {
+                sz.value=a;
+            };
+        };
+
+        function veletlenszam()
+        {
+            return Math.round(100*Math.random()+1);
+        };
+
+        function vizsgalparos(sz)
+        {
+            if (sz.value!='')
+            {
+                if (isNaN(sz.value))
+                    alert('Nem számot adott meg!');
+                else
+                    (sz.value%2==0) ? alert('A szám páros: ' + sz.value) 
+                                    : alert('A szám: ' + sz.value + '; PÁRATLAN')
+            };
+        };
+    </script>
+
+</body>
+</html>
